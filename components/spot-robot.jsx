@@ -88,7 +88,7 @@ const SpotRobot = () => {
 
   return (
     <>
-      <div className='flex z-10 w-full bottom-20 py-20 absolute justify-center'>
+      <div className='flex z-10 w-full bottom-0 py-20 absolute justify-center'>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
