@@ -75,7 +75,7 @@ function SpotModel({ positionAngle }) {
   );
 }
 
-const angleOptions = [45, -45, -30, -15, 0, 15, 30, 45];
+const angleOptions = [-45, -30, -15, 0, 15, 30, 45];
 
 const SpotRobot = () => {
   const [positionAngle, setPositionAngle] = useState(0);
@@ -88,7 +88,7 @@ const SpotRobot = () => {
 
   return (
     <>
-      <div className='flex z-10 w-full bottom-32 py-20 absolute justify-center'>
+      <div className='flex z-10 w-full bottom-20 py-20 absolute justify-center'>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
