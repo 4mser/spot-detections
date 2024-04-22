@@ -11,11 +11,9 @@ const bubbleData = [
   return (
     <main>
       
-      <section className="flex flex-row">
+      <section>
         <SpotRobot />
-        <aside className="flex justify-center items-center">
-          <DataBubbles data={bubbleData} />
-        </aside>
+        
       </section>
     </main>
   );

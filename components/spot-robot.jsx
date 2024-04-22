@@ -49,7 +49,7 @@ const SpotRobot = () => {
 
   return (
     <>
-      <div className='flex z-10  w-full md:w-[70%] bottom-32 py-20 absolute justify-center'>
+      <div className='flex z-10  w-full bottom-32 py-20 absolute justify-center'>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
@@ -77,7 +77,7 @@ const SpotRobot = () => {
           </motion.button>
         ))}
       </div>
-      <div className='md:h-[90%] h-[60vh] w-full md:w-[70%]'>
+      <div className='h-[60vh] w-full'>
         <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }}>
           <ambientLight intensity={1.5} />
           <spotLight position={[15, 30, 15]} angle={1} penumbra={1} intensity={1} castShadow />
