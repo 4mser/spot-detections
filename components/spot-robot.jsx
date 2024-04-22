@@ -8,9 +8,9 @@ import { useSpring, animated } from '@react-spring/three';
 import * as THREE from 'three';
 
 function WindowModel() {
-  const { scene } = useGLTF('/models/window.glb');
+  const { scene } = useGLTF('/models/window3.glb');
   const windowRef = useRef();
-  return <primitive object={scene} ref={windowRef} scale={0.6} position={[0, 2, 0]} />;
+  return <primitive object={scene} ref={windowRef} scale={[0.0111, 0.007, 0.01]} position={[0, 2, -0.06]} />;
 }
 
 function PyramidModel({ positionAngle }) {
@@ -44,7 +44,7 @@ function PyramidModel({ positionAngle }) {
 
   return (
     <animated.mesh geometry={pyramidGeometry}>
-      <meshBasicMaterial color="cyan" opacity={0.5} transparent side={THREE.DoubleSide} />
+      <meshBasicMaterial color="cyan" opacity={0.4} transparent side={THREE.DoubleSide} />
     </animated.mesh>
   );
 }
@@ -126,7 +126,7 @@ const SpotRobot = () => {
             <WindowModel />
             <EffectComposer>
               <Bloom luminanceThreshold={1} luminanceSmoothing={1} height={0} />
-              <Noise opacity={0.02} />
+              <Noise opacity={0.2} />
               <Vignette eskil={false} offset={0.001} darkness={1.1} />
             </EffectComposer>
           </Suspense>
