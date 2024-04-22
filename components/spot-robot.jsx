@@ -60,7 +60,7 @@ const SpotRobot = () => {
               width: '40px',
               height: '40px',
               borderRadius: '50%',
-              margin: '0 10px',
+              margin: '0 7px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
