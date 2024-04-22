@@ -36,7 +36,7 @@ function SpotModel({ positionAngle }) {
   );
 }
 
-const angleOptions = [-45, -30, -15, 0, 15, 30, 45,180];
+const angleOptions = [-45, -30, -15, 0, 15, 30, 45];
 
 const SpotRobot = () => {
   const [positionAngle, setPositionAngle] = useState(0);
