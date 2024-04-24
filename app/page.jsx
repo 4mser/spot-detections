@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import SpotRobot from "@/components/spot-robot";
 import { IQADATA } from '@/data/IQA';
-import ApexLineChart from '@/components/ApexLineChart';
+import dynamic from 'next/dynamic';
+
+const ApexLineChart = dynamic(() => import('../components/ApexLineChart'), {
+  ssr: false
+});
 
 export default function Home() {
   const [selectedAngle, setSelectedAngle] = useState(null);
