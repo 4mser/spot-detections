@@ -77,18 +77,19 @@ function SpotModel({ positionAngle }) {
 
 const angleOptions = [-45, -30, -15, 0, 15, 30, 45];
 
-const SpotRobot = () => {
+const SpotRobot = ({onAngleSelect}) => {
   const [positionAngle, setPositionAngle] = useState(0);
   const [displayAngle, setDisplayAngle] = useState(0);
 
   const handleClick = angle => {
     setPositionAngle(-angle);
     setDisplayAngle(angle);
+    onAngleSelect(angle)
   };
 
   return (
     <>
-      <div className='flex z-10 w-full bottom-0 py-20 absolute justify-center'>
+      <div className='flex z-10 w-2/3 bottom-0 py-20 absolute justify-center'>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
@@ -114,7 +115,7 @@ const SpotRobot = () => {
           </motion.button>
         ))}
       </div>
-      <div className='h-[70vh] w-full'>
+      <div className='h-[100dvh] w-2/3'>
         <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }}>
           <ambientLight intensity={1.3} />
           <spotLight position={[0, 0, 0]} angle={1} penumbra={1} intensity={1} castShadow />
@@ -126,7 +127,7 @@ const SpotRobot = () => {
             <WindowModel />
             <EffectComposer>
               <Bloom luminanceThreshold={1} luminanceSmoothing={1} height={0} />
-              <Noise opacity={0.2} />
+              <Noise opacity={0.05} />
               <Vignette eskil={false} offset={0.001} darkness={1.1} />
             </EffectComposer>
           </Suspense>
