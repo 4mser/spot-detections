@@ -1,5 +1,5 @@
 'use client'
-import React, { Suspense, useState, useEffect, useRef, useMemo } from 'react';
+import React, { Suspense, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocessing';
@@ -89,7 +89,7 @@ const SpotRobot = ({onAngleSelect}) => {
 
   return (
     <>
-      <div className='flex z-10 w-2/3 bottom-0 py-20 absolute justify-center'>
+      <div className='flex z-10 w-full md:w-1/2 bottom-0 py-20 absolute justify-center'>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
@@ -115,7 +115,7 @@ const SpotRobot = ({onAngleSelect}) => {
           </motion.button>
         ))}
       </div>
-      <div className='h-[100dvh] w-2/3'>
+      <div className='h-[100dvh] w-full md:w-1/2'>
         <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }}>
           <ambientLight intensity={1.3} />
           <spotLight position={[0, 0, 0]} angle={1} penumbra={1} intensity={1} castShadow />

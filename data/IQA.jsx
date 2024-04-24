@@ -1,4 +1,5 @@
 export const IQADATA = {
+    
     "9-12AM":[
      {
       "-45": 78,
