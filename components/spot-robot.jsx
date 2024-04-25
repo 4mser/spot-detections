@@ -26,13 +26,12 @@ function WindowModel() {
 
   return <primitive object={scene} ref={windowRef} scale={[0.0111, 0.007, 0.01]} position={[0, 2, -0.06]} />;
 }
-
 function PyramidModel({ positionAngle }) {
   const radius = 5;
   const angleInRadians = THREE.MathUtils.degToRad(positionAngle);
   const x = radius * Math.sin(angleInRadians);
   const z = radius * -Math.cos(angleInRadians);
-  const tip = [x, 0.9, z+0.2];
+  const tip = [x, 0.9, z + 0.2];
 
   const pyramidVertices = useMemo(() => {
     const baseVertices = [
@@ -56,12 +55,14 @@ function PyramidModel({ positionAngle }) {
     return geom;
   }, [pyramidVertices]);
 
-  // Animación de la opacidad que se resetea con cada cambio de ángulo
+  // Animación de la opacidad con un pico intermedio
   const { opacity } = useSpring({
     reset: true,
     from: { opacity: 0 },
-    to: { opacity: 0.01 },
-    config: { duration: 2000 } // Ajusta la duración según lo deseado
+    to: async (next) => {
+      await next({ opacity: 0.001, config: { duration: 500 } });
+      await next({ opacity: 0.01, config: { duration: 500 } });
+    }
   });
 
   return (
