@@ -5,20 +5,31 @@ const ApexLineChart = ({ data, title }) => {
   const chartOptions = {
     chart: {
       type: 'line',
+      height: 350,  // Aumenta la altura total del gráfico para ajustar
       toolbar: {
-        show: true
+        show: true,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true
+        },
+        autoSelected: 'zoom'
       },
       dropShadow: {
         enabled: true,
         top: 2,
         left: 1,
         blur: 3,
-        opacity: 0.1 // Ajusta para más o menos sombra
+        opacity: 0.1
       }
     },
     stroke: {
-      curve: 'smooth', // Cambia de 'straight' a 'smooth' para suavizar la línea
-      width: 2, // Grosor más delgado de la línea (ajusta según necesidades)
+      curve: 'smooth',
+      width: 2,
       colors: ['rgb(0,200,255)']
     },
     xaxis: {
@@ -31,11 +42,13 @@ const ApexLineChart = ({ data, title }) => {
       }
     },
     title: {
-      text: title,
+      text: '',
       align: 'left',
       style: {
-        color: '#ffffff'
-      }
+        color: '#ffffff',
+        fontSize: '16px',
+        fontWeight: 600
+      },
     },
     yaxis: {
       title: {
@@ -52,8 +65,8 @@ const ApexLineChart = ({ data, title }) => {
       }
     },
     grid: {
-      borderColor: '#898fa3', // Ajusta el color a uno que complemente tu diseño
-      strokeDashArray: 3 // Líneas punteadas en la cuadrícula para un look más suave
+      borderColor: '#898fa3',
+      strokeDashArray: 3
     },
     colors: ['rgb(0,200,255)']
   };
@@ -64,7 +77,7 @@ const ApexLineChart = ({ data, title }) => {
   }];
 
   return (
-    <ApexCharts options={chartOptions} series={series} type="line" height="300" />
+    <ApexCharts options={chartOptions} series={series} type="line" height="350" />
   );
 }
 

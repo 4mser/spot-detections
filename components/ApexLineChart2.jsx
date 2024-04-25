@@ -31,7 +31,7 @@ const ApexLineChart2 = ({ data, title }) => {
       }
     },
     title: {
-      text: title,
+      text: '',
       align: 'left',
       style: {
         color: '#ffffff'

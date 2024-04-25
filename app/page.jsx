@@ -138,7 +138,9 @@ export default function Home() {
                 </button>
               ))}
             </div>
+            <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p>
             <ApexLineChart data={averages} title={`Average IQA for each angle during ${selectedTimeFrame}`} />
+
           </div>
           <div className="container  flex w-full flex-col p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl rounded-[1.5rem] bg-white/5">
             <div className="flex flex-wrap gap-2 mb-4">
@@ -153,6 +155,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
+            <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p>
             <ApexLineChart2
               data={contrastAverages}
               title={`Average Contrast Metrics for ${selectedContrastType}`}

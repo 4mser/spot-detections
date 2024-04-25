@@ -26,7 +26,7 @@ function WindowModel() {
 
   return <primitive object={scene} ref={windowRef} scale={[0.0111, 0.007, 0.01]} position={[0, 2, -0.06]} />;
 }
-function PyramidModel({ positionAngle }) {
+const PyramidModel = React.memo(({ positionAngle }) => {
   const radius = 5;
   const angleInRadians = THREE.MathUtils.degToRad(positionAngle);
   const x = radius * Math.sin(angleInRadians);
@@ -60,8 +60,8 @@ function PyramidModel({ positionAngle }) {
     reset: true,
     from: { opacity: 0 },
     to: async (next) => {
-      await next({ opacity: 0.001, config: { duration: 500 } });
-      await next({ opacity: 0.01, config: { duration: 500 } });
+      await next({ opacity: 0.0009, config: { duration: 500 } });
+      await next({ opacity: 0.014, config: { duration: 500 } });
     }
   });
 
@@ -70,7 +70,11 @@ function PyramidModel({ positionAngle }) {
       <meshBasicMaterial color="cyan" transparent side={THREE.DoubleSide} />
     </animated.mesh>
   );
-}
+}, (prevProps, nextProps) => {
+  // Esta función de comparación verifica si el ángulo realmente cambió
+  return prevProps.positionAngle === nextProps.positionAngle;
+});
+
 
 function SpotModel({ positionAngle }) {
   const { scene } = useGLTF('/models/spot4.glb');
