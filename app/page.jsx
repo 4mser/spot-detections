@@ -124,7 +124,7 @@ export default function Home() {
       <section className='background overflow-auto h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
         <SpotRobot onAngleSelect={handleAngleSelection}/>
         {/* <ApexRadarChart data={averagesRadar}  title={`Average IQA ${selectedTimeFrame}`}/> */}
-        <section className='flex overflow-scroll z-50 h-full w-full md:w-1/2 flex-col  gap-7 absolute left-full md:left-0  md:relative  bgChart p-10'>
+        <section className='flex overflow-scroll z-50 h-full w-full md:w-1/2 flex-col  gap-3 md:gap-7 absolute left-full md:left-0  md:relative  bgChart p-4 md:p-10'>
           <div className="container w-full p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl  rounded-[1.5rem] bg-white/5">
             <div className="flex flex-wrap gap-2 mb-8">
               {Object.keys(IQADATA).map(timeFrame => (
