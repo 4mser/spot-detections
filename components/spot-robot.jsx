@@ -10,6 +10,20 @@ import * as THREE from 'three';
 function WindowModel() {
   const { scene } = useGLTF('/models/window3.glb');
   const windowRef = useRef();
+
+  // Asignar un nuevo material al modelo de la ventana
+  useMemo(() => {
+    scene.traverse(child => {
+      if (child.isMesh) {
+        child.material = new THREE.MeshStandardMaterial({
+          color: 'black', // Cambia este valor al color deseado
+          transparent: true,
+          opacity: 0.5, // Ajusta la opacidad según la transparencia deseada
+        });
+      }
+    });
+  }, [scene]);
+
   return <primitive object={scene} ref={windowRef} scale={[0.0111, 0.007, 0.01]} position={[0, 2, -0.06]} />;
 }
 
@@ -44,7 +58,7 @@ function PyramidModel({ positionAngle }) {
 
   return (
     <animated.mesh geometry={pyramidGeometry}>
-      <meshBasicMaterial color="cyan" opacity={0.4} transparent side={THREE.DoubleSide} />
+      <meshBasicMaterial color="cyan" opacity={0.01} transparent side={THREE.DoubleSide} />
     </animated.mesh>
   );
 }
@@ -104,19 +118,19 @@ const SpotRobot = ({onAngleSelect}) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: displayAngle === angle ? '#555' : '#ccc',
               color: 'white',
               border: 'none',
               outline: 'none',
               cursor: 'pointer',
             }}
+            className={`${displayAngle === angle ? 'bg-white/30' : 'bg-white/20'}`}
           >
             {`${angle}°`}
           </motion.button>
         ))}
       </div>
       <div className='h-[100dvh] w-full md:w-1/2'>
-        <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }}>
+        <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }} >
           <ambientLight intensity={1.3} />
           <spotLight position={[0, 0, 0]} angle={1} penumbra={1} intensity={1} castShadow />
           <directionalLight position={[-10, 20, 10]} intensity={3} castShadow />

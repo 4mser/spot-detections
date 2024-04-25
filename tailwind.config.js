@@ -17,6 +17,12 @@ module.exports = {
       },
     },
     extend: {
+      // habilita backdrop-filter si no está disponible por defecto
+      backdropFilter: { 
+        'none': 'none', 
+        'blur64': 'blur(64px)' 
+      },
+   
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -73,5 +79,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate", "tailwindcss-filters")],
 }
