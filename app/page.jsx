@@ -138,7 +138,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p>
+            {/* <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p> */}
             <ApexLineChart data={averages} title={`Average IQA for each angle during ${selectedTimeFrame}`} />
 
           </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p>
+            {/* <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p> */}
             <ApexLineChart2
               data={contrastAverages}
               title={`Average Contrast Metrics for ${selectedContrastType}`}

@@ -41,15 +41,6 @@ const ApexLineChart = ({ data, title }) => {
         }
       }
     },
-    title: {
-      text: '',
-      align: 'left',
-      style: {
-        color: '#ffffff',
-        fontSize: '16px',
-        fontWeight: 600
-      },
-    },
     yaxis: {
       title: {
         text: 'Average IQA',
@@ -77,7 +68,7 @@ const ApexLineChart = ({ data, title }) => {
   }];
 
   return (
-    <ApexCharts options={chartOptions} series={series} type="line" height="350" />
+    <ApexCharts options={chartOptions} series={series} type="line" height="270" />
   );
 }
 
