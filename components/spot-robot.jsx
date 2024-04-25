@@ -56,9 +56,17 @@ function PyramidModel({ positionAngle }) {
     return geom;
   }, [pyramidVertices]);
 
+  // Animación de la opacidad que se resetea con cada cambio de ángulo
+  const { opacity } = useSpring({
+    reset: true,
+    from: { opacity: 0 },
+    to: { opacity: 0.01 },
+    config: { duration: 2000 } // Ajusta la duración según lo deseado
+  });
+
   return (
-    <animated.mesh geometry={pyramidGeometry}>
-      <meshBasicMaterial color="cyan" opacity={0.01} transparent side={THREE.DoubleSide} />
+    <animated.mesh geometry={pyramidGeometry} material-opacity={opacity}>
+      <meshBasicMaterial color="cyan" transparent side={THREE.DoubleSide} />
     </animated.mesh>
   );
 }
@@ -103,7 +111,7 @@ const SpotRobot = ({onAngleSelect}) => {
 
   return (
     <>
-      <div className='flex z-10 w-full md:w-1/2 bottom-0 py-20 absolute justify-center'>
+      <div className='flex z-10 w-full md:w-1/2 bottom-0 py-20 absolute justify-center '>
         {angleOptions.map((angle) => (
           <motion.button
             key={angle}
@@ -123,13 +131,13 @@ const SpotRobot = ({onAngleSelect}) => {
               outline: 'none',
               cursor: 'pointer',
             }}
-            className={`${displayAngle === angle ? 'bg-white/30' : 'bg-white/20'}`}
+            className={`${displayAngle === angle ? 'bg-white/30' : 'bg-white/20'} `}
           >
             {`${angle}°`}
           </motion.button>
         ))}
       </div>
-      <div className='h-[100dvh] w-full md:w-1/2'>
+      <div className='h-[100dvh] w-full md:w-1/2 hover:cursor-grab'>
         <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }} >
           <ambientLight intensity={1.3} />
           <spotLight position={[0, 0, 0]} angle={1} penumbra={1} intensity={1} castShadow />

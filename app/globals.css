@@ -36,3 +36,10 @@ body {
   backdrop-filter: blur(64px);
   -webkit-backdrop-filter: blur(64px);
 }
+
+@media (max-width: 765px) {
+  .bgChart {
+      backdrop-filter: blur(64px); 
+    -webkit-backdrop-filter: blur(64px);
+  }
+}

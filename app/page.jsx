@@ -115,17 +115,17 @@ export default function Home() {
   return (
     <main className=' w-full   flex justify-center items-center'>
       <Image
-        src="/images/bg4.jpg"
+        src="/images/bg5.jpg"
         width={920}
         height={400}
         alt='Fondo'
         className='min-h-[100dvh] fixed z-0 top-0 left-0 w-full filter saturate-50 object-cover'
       />
-      <section className='background flex  flex-col md:flex-row filter   w-full h-full items-center z-2 shadow-xl'>
+      <section className='background  h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
         <SpotRobot onAngleSelect={handleAngleSelection}/>
         {/* <ApexRadarChart data={averagesRadar}  title={`Average IQA ${selectedTimeFrame}`}/> */}
-        <section className='flex w-full md:w-1/2 flex-col px-10 gap-7'>
-          <div className="container w-full p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl  rounded-[1.5rem] bg-white/10">
+        <section className='flex overflow-scroll z-50 h-full w-full md:w-1/2 flex-col  gap-7 absolute left-full md:left-0  md:relative  bgChart p-10'>
+          <div className="container w-full p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl  rounded-[1.5rem] bg-white/5">
             <div className="flex flex-wrap gap-2 mb-8">
               {Object.keys(IQADATA).map(timeFrame => (
                 <button
@@ -140,7 +140,7 @@ export default function Home() {
             </div>
             <ApexLineChart data={averages} title={`Average IQA for each angle during ${selectedTimeFrame}`} />
           </div>
-          <div className="container flex w-full flex-col p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl rounded-[1.5rem] bg-white/10">
+          <div className="container  flex w-full flex-col p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl rounded-[1.5rem] bg-white/5">
             <div className="flex flex-wrap gap-2 mb-4">
               {Object.keys(IqaContrast).map(type => (
                 <button
