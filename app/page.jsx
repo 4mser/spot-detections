@@ -122,7 +122,7 @@ export default function Home() {
         className='min-h-[100dvh] fixed z-0 top-0 left-0 w-full filter saturate-50 object-cover'
       />
       <section className='background  overflow-scroll h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
-        {/* <SpotRobot onAngleSelect={handleAngleSelection}/> */}
+        <SpotRobot onAngleSelect={handleAngleSelection}/>
         {/* <ApexRadarChart data={averagesRadar}  title={`Average IQA ${selectedTimeFrame}`}/> */}
         <section className='flex overflow-scroll z-50 h-full w-full md:w-1/2 flex-col  gap-7 absolute left-full md:left-0  md:relative  bgChart p-10'>
           <div className="container w-full p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl  rounded-[1.5rem] bg-white/5">
@@ -138,7 +138,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            {/* <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p> */}
+            <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p>
             <ApexLineChart data={averages} title={`Average IQA for each angle during ${selectedTimeFrame}`} />
 
           </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            {/* <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p> */}
+            <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p>
             <ApexLineChart2
               data={contrastAverages}
               title={`Average Contrast Metrics for ${selectedContrastType}`}
