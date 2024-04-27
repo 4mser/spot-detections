@@ -68,7 +68,7 @@ const ApexLineChart = ({ data, title }) => {
   }];
 
   return (
-    <ApexCharts options={chartOptions} series={series} type="line" height="270" />
+    <ApexCharts options={chartOptions} series={series} type="line" height="240" />
   );
 }
 

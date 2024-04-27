@@ -22,10 +22,6 @@ const ApexRadarChart = ({ data, title }) => {
     xaxis: {
       categories: categories
     },
-    title: {
-      text: title,
-      align: 'left'
-    },
     yaxis: {
       tickAmount: 5,
       labels: {
@@ -82,7 +78,7 @@ const ApexRadarChart = ({ data, title }) => {
   }];
 
   return (
-    <ApexCharts options={chartOptions} series={series} type="radar" height="350" className="absolute p-5" />
+    <ApexCharts options={chartOptions} series={series} type="radar" height="350"  />
   );
 }
 
