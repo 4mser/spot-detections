@@ -116,7 +116,7 @@ export default function Home() {
   return (
     <main className=' w-full flex justify-center items-center'>
       
-      <section className='background  overflow-hidden h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
+      <section className='background  overflow-auto h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
         <SpotRobot onAngleSelect={handleAngleSelection}/>
         {/* <ApexRadarChart data={averagesRadar}  title={`Average IQA ${selectedTimeFrame}`}/> */}
         <section className='flex overflow-scroll border-l shadow-xl   z-50 h-full w-full md:w-1/2 flex-col  gap-4 absolute left-full md:left-0  md:relative  bgChart p-4 md:gap-5 md:p-10'>
