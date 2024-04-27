@@ -29,15 +29,15 @@ const ApexLineChart = ({ data, title }) => {
     },
     stroke: {
       curve: 'smooth',
-      width: 2,
+      width: 3,
       colors: ['rgb(0,200,255)']
     },
     xaxis: {
       categories: ['-45°', '-30°', '-15°', '0°', '15°', '30°', '45°'],
       labels: {
         style: {
-          colors: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
-          fontSize: '12px'
+          colors: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
+          fontSize: '10px'
         }
       }
     },
@@ -45,13 +45,13 @@ const ApexLineChart = ({ data, title }) => {
       title: {
         text: 'Average IQA',
         style: {
-          color: '#ffffff'
+          color: '#000000'
         }
       },
       labels: {
         style: {
-          colors: ['#ffffff'],
-          fontSize: '12px'
+          colors: ['#000000'],
+          fontSize: '10px'
         }
       }
     },

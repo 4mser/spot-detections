@@ -1,5 +1,5 @@
 export const IqaContrast = {
-    "Uniformity":[
+    "Contrast":[
         {
          "Column1": 0.02,
          "Column2": 0.035,

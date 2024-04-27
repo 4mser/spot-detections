@@ -2,35 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 220, 220, 220;
-    --background-end-rgb: 190, 190, 190;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 .background {
   backdrop-filter: blur(64px);
@@ -43,3 +15,25 @@ body {
     -webkit-backdrop-filter: blur(64px);
   }
 }
+/* 
+body {
+  background: #bdc3c7;  
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7); 
+background: linear-gradient(to right, #2c3e50, #bdc3c7);
+
+} */
+
+/* body {
+  background: #E0EAFC;  
+  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); 
+  background: linear-gradient(to right, #CFDEF3, #E0EAFC); 
+} */
+
+/* body {
+  background: #8e9eab; 
+background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab); 
+background: linear-gradient(to right, #eef2f3, #8e9eab);
+
+} */
+
+

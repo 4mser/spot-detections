@@ -1,0 +1,8 @@
+{
+    "workbench.editor.highlightModifiedTabs": false,
+    "scm.defaultViewMode": "list",
+    "workbench.activityBar.location": "side",
+    "workbench.sideBar.location": "left",
+    "workbench.panel.defaultLocation": "left",
+    "merge-conflict.diffViewPosition": "Current"
+}

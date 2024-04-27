@@ -18,15 +18,15 @@ const ApexLineChart2 = ({ data, title }) => {
     },
     stroke: {
       curve: 'smooth', // Suaviza la línea
-      width: 2, // Hace la línea más delgada
+      width: 3, // Hace la línea más delgada
       colors: ['rgb(239,68,68)']
     },
     xaxis: {
       categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
       labels: {
         style: {
-          colors: ['#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff'],
-          fontSize: '12px'
+          colors: ['#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000','#000000'],
+          fontSize: '10px'
         }
       }
     },
@@ -34,13 +34,13 @@ const ApexLineChart2 = ({ data, title }) => {
       title: {
         text: 'Average IQA',
         style: {
-          color: '#ffffff'
+          color: '#000000'
         }
       },
       labels: {
         style: {
-          colors: ['#ffffff'],
-          fontSize: '12px'
+          colors: ['#000000'],
+          fontSize: '10px'
         }
       }
     },

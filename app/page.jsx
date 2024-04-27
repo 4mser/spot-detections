@@ -38,12 +38,13 @@ const calculateContrastAverages = (contrastData) => {
     x: column.replace('Column', ''),
     y: (totals[column] / counts[column]).toFixed(2)
   }));
+
 };
 
 export default function Home() {
   const [selectedAngle, setSelectedAngle] = useState(null);
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('9-12AM');
-  const [selectedContrastType, setSelectedContrastType] = useState('Uniformity');
+  const [selectedContrastType, setSelectedContrastType] = useState('Contrast');
   const [averagesRadar, setAveragesRadar] = useState([]);
 
   const calculateAverageIQAForAllAngles = (IQADATA) => {
@@ -113,49 +114,43 @@ export default function Home() {
   }, [selectedContrastType]);
 
   return (
-    <main className=' w-full   flex justify-center items-center'>
-      <Image
-        src="/images/bg5.jpg"
-        width={920}
-        height={400}
-        alt='Fondo'
-        className='min-h-[100dvh] fixed z-0 top-0 left-0 w-full filter saturate-50 object-cover'
-      />
-      <section className='background  overflow-scroll h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
+    <main className=' w-full flex justify-center items-center'>
+      
+      <section className='background  overflow-hidden h-[100dvh] flex  flex-col md:flex-row filter   w-full  items-center z-2 shadow-xl'>
         <SpotRobot onAngleSelect={handleAngleSelection}/>
         {/* <ApexRadarChart data={averagesRadar}  title={`Average IQA ${selectedTimeFrame}`}/> */}
-        <section className='flex overflow-scroll z-50 h-full w-full md:w-1/2 flex-col  gap-4 absolute left-full md:left-0  md:relative  bgChart p-4 md:gap-7 md:p-10'>
-          <div className="container w-full p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl  rounded-[1.5rem] bg-white/5">
-            <div className="flex flex-wrap gap-1 md:gap-2 mb-8">
+        <section className='flex overflow-scroll border-l shadow-xl   z-50 h-full w-full md:w-1/2 flex-col  gap-4 absolute left-full md:left-0  md:relative  bgChart p-4 md:gap-5 md:p-10'>
+          <div className="container  w-full p-4 border border-black/10 transition-all shadow-lg shadow-black/5  hover:shadow-xl  rounded-[1.5rem] ">
+            <div className="flex flex-wrap gap-1 md:gap-2 mb-8 ">
               {Object.keys(IQADATA).map(timeFrame => (
                 <button
                   key={timeFrame}
                   onClick={() => setSelectedTimeFrame(timeFrame)}
                   className={`px-3 py-2 rounded-full text-xs text-white font-medium transition  border border-white/0 
-                              ${selectedTimeFrame === timeFrame ? 'bg-cyan-600' : 'bg-white/20 hover:border-white/30'}`}
+                              ${selectedTimeFrame === timeFrame ? 'bg-[rgb(0,200,255)] shadow-md' : '  hover:shadow-md text-black/70'}`}
                 >
                   {timeFrame}
                 </button>
               ))}
             </div>
-            <p className='text-white text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p>
+            <p className='text-slate-700 text-sm font-medium px-2'>{`Average IQA for each angle during ${selectedTimeFrame}`}</p>
             <ApexLineChart data={averages} title={`Average IQA for each angle during ${selectedTimeFrame}`} />
 
           </div>
-          <div className="container  flex w-full flex-col p-4 border-t border-b border-white/20 shadow-lg transition-shadow hover:shadow-2xl rounded-[1.5rem] bg-white/5">
+          <div className="container  flex w-full flex-col p-4 border border-black/10 shadow-lg transition-all hover:shadow-xl rounded-[1.5rem] bg-white/5">
             <div className="flex flex-wrap gap-1 md:gap-2 mb-4">
               {Object.keys(IqaContrast).map(type => (
                 <button
                   key={type}
                   onClick={() => setSelectedContrastType(type)}
                   className={`px-3 py-2 rounded-full text-xs text-white font-medium transition border border-white/0 duration-300 
-                              ${selectedContrastType === type ? 'bg-red-500' : 'bg-white/20 hover:border-white/30'}`}
+                              ${selectedContrastType === type ? 'bg-red-500 shadow-md' : '  hover:shadow-md text-black/70'}`}
                 >
                   {type}
                 </button>
               ))}
             </div>
-            <p className='text-white text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p>
+            <p className='text-slate-700 text-sm font-medium px-2'>{`Average Contrast Metrics for ${selectedContrastType}`}</p>
             <ApexLineChart2
               data={contrastAverages}
               title={`Average Contrast Metrics for ${selectedContrastType}`}
