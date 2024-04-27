@@ -126,8 +126,8 @@ export default function Home() {
                 <button
                   key={timeFrame}
                   onClick={() => setSelectedTimeFrame(timeFrame)}
-                  className={`px-3 py-2 rounded-full text-xs text-white font-medium transition  border border-white/0 
-                              ${selectedTimeFrame === timeFrame ? 'bg-[rgb(0,200,255)] shadow-md' : '  hover:shadow-md text-black/70'}`}
+                  className={`px-3 py-2 rounded-full text-xs font-medium transition  border border-white/0 
+                              ${selectedTimeFrame === timeFrame ? 'bg-[rgb(0,200,255)] shadow-md text-white ' : '  hover:shadow-md text-black/70'}`}
                 >
                   {timeFrame}
                 </button>
@@ -143,8 +143,8 @@ export default function Home() {
                 <button
                   key={type}
                   onClick={() => setSelectedContrastType(type)}
-                  className={`px-3 py-2 rounded-full text-xs text-white font-medium transition border border-white/0 duration-300 
-                              ${selectedContrastType === type ? 'bg-red-500 shadow-md' : '  hover:shadow-md text-black/70'}`}
+                  className={`px-3 py-2 rounded-full text-xs  font-medium transition border border-white/0 duration-300 
+                              ${selectedContrastType === type ? 'bg-red-500 shadow-md text-white' : '  hover:shadow-md text-black/70'}`}
                 >
                   {type}
                 </button>
